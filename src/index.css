@@ -1,0 +1,29 @@
+/* Nhúng font chữ cổ điển và hiện đại từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;600&display=swap');
+
+:root {
+  /* Bảng màu Cung đình Huế */
+  --color-gold: #c5a059;       /* Vàng đồng hoàng gia */
+  --color-crimson: #6e2c2a;    /* Đỏ mận/Sơn son */
+  --color-paper: #f6f4f0;      /* Trắng ngà/Giấy dó */
+  --color-text-dark: #2c241b;  /* Đen xám (gỗ mun) */
+  --color-text-light: #ffffff;
+  
+  /* Cài đặt Font */
+  --font-heading: 'Lora', serif;
+  --font-body: 'Mulish', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* Cần thiết cho hiệu ứng cuộn mượt */
+  background-color: var(--color-paper);
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+}
