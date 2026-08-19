@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'; 
-
+import imgVuaMinhMang from "/Users/letha/web-lang-minh-mang/public/images/MinhMang.jpg"
 const mapNotes = [
   { id: 1, name: "Đại Hồng Môn" },
   { id: 2, name: "Tả Hồng Môn" },
