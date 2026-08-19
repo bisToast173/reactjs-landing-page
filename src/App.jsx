@@ -41,10 +41,19 @@ const mapNotes = [
   { id: 37, name: "Phường Môn" },
   { id: 38, name: "Cống Nước" },
 ];
-
+const constructionTimeline = [
+  { year: "1826", title: "Tầm Đất Phong Thủy", desc: "Sau 7 năm lên ngôi, Vua Minh Mạng sai các quan địa lý đi chọn đất xây lăng. Phải mất 14 năm tìm kiếm kỹ càng khắp vùng đồi núi xứ Huế." },
+  { year: "04/1840", title: "Chính Thức Khởi Công", desc: "Chấm dứt 14 năm tìm kiếm, vua chọn núi Cẩm Kê (đổi tên thành Hiếu Sơn). Đích thân phê duyệt bản vẽ của Bùi Công Huyên & Trương Đăng Quế." },
+  { year: "08/1840", title: "Đình Chỉ Thi Công", desc: "Nhà vua cho tạm dừng công trình giữa chừng vì không vừa ý với thiết kế hồ Trừng Minh, yêu cầu đào sửa lại theo đúng ý nguyện." },
+  { year: "09/1840", title: "Tiếp Tục & Bạo Bệnh", desc: "Cho tiếp tục thi công lăng sau khi chỉnh sửa. Cùng thời gian này, sức khỏe nhà vua suy giảm và lâm bạo bệnh." },
+  { year: "01/1841", title: "Vua Minh Mạng Băng Hà", desc: "Nhà vua đột ngột qua đời khi Hiếu Lăng vẫn còn đang dang dở, để lại di nguyện kiến trúc chưa trọn vẹn." },
+  { year: "02/1841", title: "Vua Thiệu Trị Nối Nghiệp", desc: "Thiệu Trị lên ngôi, lập tức điều động gần 10.000 lính và thợ giỏi tiếp tục thi công gấp rút theo đúng họa đồ của vua cha." },
+  { year: "20/08/1841", title: "An Táng Vào Bửu Thành", desc: "Lễ đưa thi hài Vua Minh Mạng vào chôn cất tại Huyền Cung bên trong Bửu Thành diễn ra vô cùng trang nghiêm." },
+  { year: "Đầu 1843", title: "Hoàn Thành Mỹ Mãn", desc: "Toàn bộ quần thể Hiếu Lăng chính thức hoàn tất trọn vẹn sau gần 3 năm nỗ lực thi công của hàng vạn nhân công." }
+];
 export default function App() {
   const [isZoomed, setIsZoomed] = useState(false);
-
+  const [activeMilestone, setActiveMilestone] = useState(0);
   return (
     <div className="snap-container">
       
@@ -188,6 +197,55 @@ export default function App() {
         </div>
       </section>
 
+<section className="snap-section paper-section construction-section">
+        <div className="content-wrapper" style={{ maxWidth: '950px' }}>
+          <h2 className="section-title">Ký Sự Kiến Thiết Hiếu Lăng</h2>
+          <p className="info-text" style={{ textAlign: 'center', marginBottom: '24px' }}>
+            Hành trình 17 năm từ ý tưởng tầm đất phong thủy đến khi hàng vạn nhân công hoàn thành di nguyện của bậc đế vương.
+          </p>
+
+          {/* THANH TIẾN TRÌNH INTERACTIVE STEPPER */}
+          <div className="stepper-nav">
+            {constructionTimeline.map((item, index) => (
+              <button
+                key={index}
+                className={`step-node ${activeMilestone === index ? 'active' : ''}`}
+                onClick={() => setActiveMilestone(index)}
+              >
+                <span className="node-year">{item.year}</span>
+                <span className="node-dot"></span>
+              </button>
+            ))}
+          </div>
+
+          {/* THẺ HIỂN THỊ CHI TIẾT CỘT MỐC ĐANG CHỌN */}
+          <div className="milestone-display-card">
+            <div className="milestone-badge">Mốc thời gian: {constructionTimeline[activeMilestone].year}</div>
+            <h3 className="milestone-title">{constructionTimeline[activeMilestone].title}</h3>
+            <p className="milestone-desc">{constructionTimeline[activeMilestone].desc}</p>
+          </div>
+
+          {/* NÚT CHUYỂN CỘT MỐC NHANH */}
+          <div className="milestone-controls">
+            <button 
+              className="ctrl-btn" 
+              disabled={activeMilestone === 0}
+              onClick={() => setActiveMilestone(prev => Math.max(0, prev - 1))}
+            >
+              ← Về trước
+            </button>
+            <span className="milestone-counter">{activeMilestone + 1} / {constructionTimeline.length}</span>
+            <button 
+              className="ctrl-btn" 
+              disabled={activeMilestone === constructionTimeline.length - 1}
+              onClick={() => setActiveMilestone(prev => Math.min(constructionTimeline.length - 1, prev + 1))}
+            >
+              Kế tiếp →
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 4.5: HÀNH TRÌNH KHÁM PHÁ (CUỘN NGANG) */}
       <section className="snap-section tour-section">
         <div className="horizontal-scroll-container">
@@ -303,12 +361,6 @@ export default function App() {
             </p>
             <p className="cinematic-text highlight-text">
               Sâu dưới lòng đất là Huyền Cung, nhưng vị trí thực sự của mộ phần đến nay vẫn là một ẩn số tuyệt mật đối với nhân thế.
-            </p>
-            <p className="cinematic-text">
-              Cảm ơn mọi người đã xem hết.
-            </p>
-            <p className="cinematic-text highlight-text">
-              -The end-
             </p>
           </div>
         </div>
