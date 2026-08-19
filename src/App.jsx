@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'; 
+import imgVuaMinhMang from "/Users/letha/web-lang-minh-mang/public/images/MinhMang.jpg"
 
 const mapNotes = [
   { id: 1, name: "Đại Hồng Môn" },
@@ -80,7 +81,7 @@ export default function App() {
             <div className="portrait-wrapper">
               {/* Bạn có thể thay đường dẫn ảnh dưới đây bằng ảnh thực tế của bạn */}
               <img 
-                src="/public/images/MinhMang.jpg"
+                src={imgVuaMinhMang}
                 alt="Chân dung Vua Minh Mạng" 
                 className="portrait-image"
               />
