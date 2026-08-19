@@ -716,7 +716,7 @@
 }
 
 .bg-gate { background-image: url('/images/dai-hong-mon.jpg'); }
-.bg-bidinh{background-image: url('images/bi-dinh.jpg');}
+.bg-bidinh{background-image: url('/public/images/bi-dinh.jpg'); }
 .bg-temple { background-image: url('/images/dien-sung-an.jpg'); }
 .bg-minhlau { background-image: url('/images/minh-lau.jpg'); }
 .bg-lake { background-image: url('/images/tan-nguyet.jpg'); }
