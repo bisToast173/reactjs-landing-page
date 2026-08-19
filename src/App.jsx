@@ -159,7 +159,7 @@ export default function App() {
           
           <div className="flip-cards-container">
             {/* THẺ LẬT 1 */}
-            <div className="flip-card">
+            <div className="flip-card" tabIndex="0">
               <div className="flip-card-inner">
                 {/* Mặt trước */}
                 <div className="flip-card-front">
@@ -177,7 +177,7 @@ export default function App() {
             </div>
 
             {/* THẺ LẬT 2 */}
-            <div className="flip-card">
+            <div className="flip-card" tabIndex="0">
               <div className="flip-card-inner">
                 {/* Mặt trước */}
                 <div className="flip-card-front">
