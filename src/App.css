@@ -919,18 +919,6 @@
   display: none;
 }
 
-/* Đường kẻ nối các mốc */
-.stepper-nav::before {
-  content: '';
-  position: absolute;
-  top: 65%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: rgba(197, 160, 89, 0.4);
-  z-index: 1;
-}
-
 .step-node {
   background: none;
   border: none;
@@ -941,6 +929,21 @@
   z-index: 2;
   min-width: 80px;
   transition: all 0.3s ease;
+}
+
+.step-node::before {
+  content: '';
+  position: absolute;
+  bottom: 7px; /* Căn đúng tâm của dấu chấm (14px/2) */
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(197, 160, 89, 0.4);
+  z-index: 1;
+}
+
+.step-node:last-child::before {
+  display: none;
 }
 
 .node-year {
@@ -960,6 +963,8 @@
   border: 2px solid var(--color-gold);
   transition: all 0.3s ease;
   box-shadow: 0 0 0 3px var(--color-paper);
+  position: relative; /* Thêm dòng này */
+  z-index: 2;         /* Thêm dòng này */
 }
 
 /* Trạng thái Node đang active */
@@ -1057,4 +1062,254 @@
   font-family: var(--font-heading);
   font-size: 0.9rem;
   color: #888;
+}
+
+@media (max-width: 768px) {
+  /* 1. KHẮC PHỤC LỖI CHIỀU CAO TOÀN TRANG (Sử dụng 100dvh chuẩn di động) */
+  .snap-container {
+    height: 100dvh;
+  }
+
+  .snap-section {
+    height: 100dvh;
+    padding: 12px 16px; /* Thu hẹp padding viền */
+    box-sizing: border-box;
+  }
+
+  /* Thu nhỏ các tiêu đề chung */
+  .section-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .section-title::after {
+    margin: 6px auto 0 !important;
+    height: 2px !important;
+  }
+
+  /* --- TRANG 1: HERO --- */
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-content {
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+
+  /* --- TRANG 2: VỊ VUA KIỆT XUẤT (FIX LỖI CHÈN ẢNH) --- */
+  .section-2-container .split-layout {
+    height: 100%;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .portrait-column {
+    flex: 0 0 auto;
+    max-height: 130px; /* Ép gọn chiều cao khung ảnh */
+    margin-bottom: 5px;
+  }
+
+  .portrait-wrapper {
+    max-width: 95px; /* Thu nhỏ ảnh để không đè lên chữ */
+    height: 100%;
+    aspect-ratio: 3 / 4;
+    border-width: 2px;
+  }
+
+  .portrait-caption {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+
+  .timeline-column {
+    flex: 1;
+    max-height: calc(100dvh - 200px); /* Tự động tính chiều cao còn lại cho dòng thời gian */
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .timeline {
+    padding-left: 18px;
+    margin-left: 2px;
+  }
+
+  .timeline-dot {
+    left: -24px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-item {
+    margin-bottom: 10px;
+  }
+
+  .timeline-card {
+    padding: 10px 12px;
+  }
+
+  .timeline-card .card-title {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .timeline-card .info-text {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  /* --- TRANG 3: TRIẾT LÝ & PHONG THỦY (2 THẺ LẬT) --- */
+  .flip-cards-container {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .flip-card {
+    max-width: 100%;
+    height: 150px; /* Thu nhỏ thẻ lật để xếp vừa 2 thẻ trên 1 màn hình */
+  }
+
+  .flip-card-front, .flip-card-back {
+    padding: 10px 14px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 2px;
+  }
+
+  .flip-card-front .card-title {
+    font-size: 1rem;
+    margin-top: 2px !important;
+  }
+
+  .flip-card-back .info-text {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  /* --- TRANG KÝ SỰ KIẾN THIẾT --- */
+  .construction-section .info-text {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .stepper-nav {
+    margin: 8px 0 12px;
+  }
+
+  .step-node {
+    min-width: 65px;
+  }
+
+  .node-year {
+    font-size: 0.7rem;
+  }
+
+  .milestone-display-card {
+    padding: 14px 16px;
+    min-height: 140px;
+  }
+
+  .milestone-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+  }
+
+  .milestone-title {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .milestone-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* --- TRANG TOUR (CUỘN NGANG) --- */
+  .h-slide-content {
+    padding: 20px 16px;
+  }
+
+  .h-slide-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .swipe-hint {
+    bottom: 15px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+  }
+
+  /* --- TRANG SƠ ĐỒ TỔNG THỂ --- */
+  .map-layout {
+    min-height: unset;
+    height: calc(100dvh - 110px);
+    gap: 8px;
+  }
+
+  .map-image-container {
+    flex: 1;
+    max-height: 38vh;
+    padding: 4px;
+  }
+
+  .map-notes-container {
+    flex: 1;
+    max-height: 34vh;
+    padding: 6px;
+  }
+
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột cho tiết kiệm không gian */
+    gap: 4px;
+  }
+
+  .note-card {
+    padding: 4px 6px;
+    font-size: 0.72rem;
+  }
+
+  /* --- TRANG LỜI KẾT & THAM QUAN --- */
+  .visit-cards-grid {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .visit-card {
+    padding: 8px 10px;
+  }
+
+  .visit-icon {
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+  }
+
+  .visit-card-title {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+
+  .visit-card .info-text {
+    font-size: 0.78rem;
+  }
+
+  .footer-actions {
+    margin-bottom: 12px;
+  }
+
+  .btn-primary {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  .site-footer {
+    padding-top: 10px;
+    font-size: 0.75rem;
+  }
 }
