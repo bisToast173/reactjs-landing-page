@@ -367,9 +367,6 @@
 }
 
 .portrait-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background: rgba(44, 36, 27, 0.85);
   color: var(--color-gold);

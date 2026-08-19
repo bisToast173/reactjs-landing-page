@@ -84,10 +84,9 @@ export default function App() {
                 src={imgVuaMinhMang}
                 alt="Chân dung Vua Minh Mạng" 
                 className="portrait-image"
-              />
+              /></div>
               <div className="portrait-caption">
                 Hoàng đế Minh Mạng (1791 - 1841)
-              </div>
             </div>
           </div>
 
