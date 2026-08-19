@@ -306,7 +306,7 @@ export default function App() {
         </div>
         
         {/* Chỉ thị vuốt / cuộn ngang */}
-        <div className="swipe-hint">← Trượt ngang để khám phá →</div>
+        <div className="swipe-hint">← Khám phá thêm →</div>
       </section>
 
       {/* SECTION 4: SƠ ĐỒ TỔNG THỂ */}
