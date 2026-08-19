@@ -1119,26 +1119,60 @@
   .flip-card-back .info-text { font-size: 0.85rem; line-height: 1.4; }
 
   /* --- TRANG 4.5: TOUR (CUỘN NGANG) --- */
+.tour-section {
+    height: 100dvh !important;
+    padding: 0 !important;
+  }
+
   .horizontal-scroll-container {
     height: 100dvh;
     width: 100vw;
   }
 
+  .h-slide {
+    height: 100dvh;
+    /* Dùng column-reverse để đưa ảnh lên trên, chữ xuống dưới */
+    display: flex;
+    flex-direction: column-reverse; 
+  }
+
+  /* Khóa cứng chiều cao Ảnh: đúng 45% màn hình */
   .h-slide-image {
-    flex: 1;
-    max-height: 50dvh; 
+    flex: 0 0 45dvh !important; 
+    height: 45dvh;
+    max-height: 45dvh;
+    width: 100%;
   }
 
+  /* Khóa cứng chiều cao Chữ: đúng 55% màn hình */
   .h-slide-content {
-    flex: 1;
-    padding: 16px;
-    max-height: 50dvh;
+    flex: 0 0 55dvh !important; 
+    height: 55dvh;
+    max-height: 55dvh;
+    padding: 20px 16px 40px 16px; /* Chừa khoảng trống phía dưới cho chữ Swipe */
+    overflow-y: auto; /* Tự động có thanh cuộn dọc nếu văn bản quá dài */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Đẩy chữ lên phía trên cho dễ đọc */
   }
 
-  .h-slide-title { font-size: 1.5rem; margin-bottom: 10px; }
+  .h-slide-title { 
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+    text-align: center;
+  }
 
-  .swipe-hint { bottom: 15px; padding: 6px 16px; font-size: 0.8rem; }
+  .h-slide-content .info-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
 
+  .swipe-hint { 
+    bottom: 10px; 
+    padding: 6px 16px; 
+    font-size: 0.75rem; 
+  }
   /* --- TRANG SƠ ĐỒ TỔNG THỂ --- */
   .map-layout { min-height: unset; height: calc(100dvh - 110px); gap: 8px; }
   .map-image-container { flex: 1; max-height: 38vh; padding: 4px; }
