@@ -39,7 +39,7 @@
 /* --- TRANG 1: HERO KHỞI ĐẦU --- */
 .hero-section {
   background-image: linear-gradient(to bottom, rgba(44, 36, 27, 0.4), rgba(44, 36, 27, 0.8)), 
-                    url('/public/images/Lăng_Minh_Mạng_-_Mausoleum_of_Emperor_Minh_Mạng_\(2024\)_-_img_15.jpg'); /* Đổi lại tên ảnh thực tế của bạn */
+                    url('/public/images/Lăng_Minh_Mạng_-_Mausoleum_of_Emperor_Minh_Mạng_\(2024\)_-_img_15.jpg'); 
   background-size: cover;
   background-position: center;
   color: var(--color-text-light);
@@ -96,7 +96,6 @@
   color: var(--color-gold);
 }
 
-/* Đường gạch ngang trang trí dưới tiêu đề */
 .section-title::after {
   content: '';
   display: block;
@@ -162,7 +161,7 @@
   margin-bottom: 0;
 }
 
-/* --- HIỆU ỨNG CHỈ THỊ CUỘN (SCROLL ICON) --- */
+/* --- HIỆU ỨNG CHỈ THỊ CUỘN --- */
 .scroll-indicator {
   position: absolute;
   bottom: 40px;
@@ -303,44 +302,43 @@
   to { opacity: 1; }
 }
 
-/* --- RESPONSIVE TABLET / PC --- */
 @media (min-width: 768px) {
   .map-layout {
     flex-direction: row;
     align-items: stretch; 
     height: 80vh; 
   }
-
   .map-image-container {
     flex: 1; 
     max-height: 100%; 
   }
-
   .map-notes-container {
     flex: 1.1; 
     max-height: 100%;
   }
-
   .notes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* =========================================
+   SECTION 2: CHÂN DUNG & DÒNG THỜI GIAN
+   ========================================= */
 .section-2-container {
-  padding: 0; /* Bỏ padding mặc định để mở rộng không gian */
+  padding: 0; 
 }
 
 .split-layout {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px; /* Tăng max-width để chứa đủ 2 cột */
+  max-width: 1100px; 
   height: 90vh; 
   margin: auto;
   padding: 20px;
   gap: 30px;
 }
 
-/* --- CỘT TRÁI: CHÂN DUNG (MOBILE) --- */
 .portrait-column {
   flex: 0.8;
   display: flex;
@@ -382,19 +380,17 @@
   letter-spacing: 1px;
 }
 
-/* --- CỘT PHẢI: DÒNG THỜI GIAN --- */
 .timeline-column {
   flex: 1.2;
-  overflow-y: auto; /* Cho phép cuộn nội bộ nếu text quá dài */
+  overflow-y: auto; 
   padding-right: 10px;
   text-align: left;
 }
 
-/* Thiết kế trục dọc */
 .timeline {
   position: relative;
   padding-left: 28px;
-  border-left: 2px solid rgba(197, 160, 89, 0.4); /* Đường kẻ màu vàng nhạt */
+  border-left: 2px solid rgba(197, 160, 89, 0.4); 
   margin-left: 10px;
 }
 
@@ -407,51 +403,45 @@
   margin-bottom: 10px;
 }
 
-/* Thiết kế dấu chấm (Node) */
 .timeline-dot {
   position: absolute;
-  left: -35px; /* Kéo dấu chấm đè lên đường kẻ */
-  top: 24px; /* Căn chỉnh với dòng đầu tiên của thẻ */
+  left: -35px; 
+  top: 24px; 
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background-color: var(--color-paper);
   border: 3px solid var(--color-gold);
   z-index: 2;
-  box-shadow: 0 0 0 4px var(--color-paper); /* Tạo viền cắt đứt đường kẻ dọc */
+  box-shadow: 0 0 0 4px var(--color-paper); 
 }
 
-/* Tinh chỉnh thẻ thông tin nằm trong timeline */
 .timeline-card {
   padding: 20px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-card:hover {
-  transform: translateX(8px); /* Hiệu ứng trượt nhẹ sang phải khi trỏ chuột */
+  transform: translateX(8px); 
   border-color: var(--color-gold);
   box-shadow: 0 10px 20px rgba(197, 160, 89, 0.15);
 }
 
-/* --- TÙY CHỈNH CHO MÀN HÌNH LỚN (PC / TABLET) --- */
 @media (min-width: 768px) {
   .split-layout {
-    flex-direction: row; /* Chuyển sang bố cục chia đôi màn hình ngang */
+    flex-direction: row; 
     align-items: flex-start;
     height: 80vh;
   }
-
   .portrait-column {
     flex: 1;
     max-height: 80vh;
     padding-top: 50px;
   }
-
   .portrait-wrapper {
     max-width: 100%;
     height: 90%;
   }
-
   .timeline-column {
     flex: 1.2;
     max-height: 80vh;
@@ -459,15 +449,14 @@
     padding-top: 20px;
   }
 }
+
 /* =========================================
    SECTION 3: PARALLAX & FLIP CARDS
    ========================================= */
-
-/* --- Hiệu ứng cuộn Parallax --- */
 .parallax-section {
   position: relative;
-  background-image: url("/public/images/Tombeau_de_Minh_Mang.jpg"); /* Đổi thành ảnh toàn cảnh lăng từ trên cao của bạn */
-  background-attachment: fixed; /* Cố định ảnh nền khi cuộn */
+  background-image: url("/public/images/Tombeau_de_Minh_Mang.jpg"); 
+  background-attachment: fixed; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -479,7 +468,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(44, 36, 27, 0.7); /* Lớp phủ đen mờ */
+  background-color: rgba(44, 36, 27, 0.7); 
   z-index: 1;
 }
 
@@ -488,7 +477,6 @@
   z-index: 2;
 }
 
-/* --- Khung chứa Thẻ Lật --- */
 .flip-cards-container {
   display: flex;
   flex-direction: column;
@@ -503,14 +491,13 @@
   }
 }
 
-/* --- Thiết kế Thẻ Lật 3D --- */
 .flip-card {
   background-color: transparent;
   width: 100%;
   max-width: 350px;
   height: 280px;
   margin: 0 auto;
-  perspective: 1000px; /* Tạo không gian 3D */
+  perspective: 1000px; 
 }
 
 .flip-card-inner {
@@ -519,20 +506,18 @@
   height: 100%;
   text-align: center;
   transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d; /* Giữ các mặt ở không gian 3D */
+  transform-style: preserve-3d; 
 }
 
-/* Kích hoạt lật khi hover (PC) hoặc chạm (Mobile) */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Mặt trước và mặt sau dùng chung cấu trúc này */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Dành cho Safari */
+  -webkit-backface-visibility: hidden; 
   backface-visibility: hidden;
   border-radius: 12px;
   display: flex;
@@ -543,17 +528,15 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* Mặt trước */
 .flip-card-front {
   background-color: var(--color-paper);
   border: 2px solid var(--color-gold);
 }
 
-/* Mặt sau */
 .flip-card-back {
   background-color: var(--color-crimson);
   color: var(--color-text-light);
-  transform: rotateY(180deg); /* Lật ngược sẵn mặt sau */
+  transform: rotateY(180deg); 
   border: 2px solid var(--color-gold);
 }
 
@@ -576,33 +559,28 @@
   text-align: justify;
   color: var(--color-paper);
 }
+
 /* =========================================
    SECTION 5: KHÔNG GIAN ĐIỆN ẢNH (CINEMATIC)
    ========================================= */
-
 .cinematic-section {
   position: relative;
-  background-color: #050505; /* Nền đen tuyền làm chủ đạo */
-  background-image: url('/images/buu-thanh-dark.jpg'); /* Ảnh cửa Bửu Thành hoặc ảnh phong cảnh tối */
+  background-color: #050505; 
   background-size: cover;
   background-position: center;
   overflow: hidden;
 }
 
-/* Tạo viền đen mờ bao quanh, sáng ở giữa */
 .vignette-overlay {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: radial-gradient(circle at center, transparent 10%, #000000 85%);
   z-index: 1;
 }
 
 .cinematic-content {
   position: relative;
-  z-index: 2; /* Đảm bảo chữ nổi lên trên lớp bóng tối */
+  z-index: 2; 
   max-width: 750px;
 }
 
@@ -613,7 +591,7 @@
   margin-bottom: 30px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  text-shadow: 0 0 25px rgba(197, 160, 89, 0.6); /* Hào quang vàng rực quanh chữ */
+  text-shadow: 0 0 25px rgba(197, 160, 89, 0.6); 
 }
 
 .cinematic-text-wrapper {
@@ -629,7 +607,6 @@
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
 }
 
-/* Làm nổi bật câu chốt hạ */
 .highlight-text {
   color: var(--color-gold);
   font-style: italic;
@@ -637,21 +614,17 @@
   opacity: 0.95;
 }
 
-/* --- HIỆU ỨNG ĐỐM SÁNG (FIREFLIES) --- */
 .fireflies {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
   z-index: 1;
-  pointer-events: none; /* Không cản trở cuộn chuột */
+  pointer-events: none; 
 }
 
 .firefly {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 4px; height: 4px;
   background-color: var(--color-gold);
   border-radius: 50%;
   box-shadow: 0 0 12px 3px var(--color-gold);
@@ -659,7 +632,6 @@
   animation: floatUp infinite ease-in;
 }
 
-/* Tùy chỉnh vị trí và tốc độ ngẫu nhiên cho 6 hạt sáng */
 .firefly:nth-child(1) { left: 15%; animation-delay: 0s; animation-duration: 9s; }
 .firefly:nth-child(2) { left: 55%; animation-delay: 2s; animation-duration: 7s; }
 .firefly:nth-child(3) { left: 85%; animation-delay: 4s; animation-duration: 10s; }
@@ -667,35 +639,19 @@
 .firefly:nth-child(5) { left: 70%; animation-delay: 5s; animation-duration: 11s; }
 .firefly:nth-child(6) { left: 45%; animation-delay: 3.5s; animation-duration: 9s; }
 
-/* Chuyển động bay lên và lắc lư nhẹ */
 @keyframes floatUp {
-  0% { 
-    bottom: -10%; 
-    opacity: 0; 
-    transform: translateX(0) scale(0.5); 
-  }
-  20% { 
-    opacity: 0.8; 
-  }
-  50% {
-    transform: translateX(15px) scale(1);
-  }
-  80% { 
-    opacity: 0.5; 
-  }
-  100% { 
-    bottom: 110%; 
-    opacity: 0; 
-    transform: translateX(-15px) scale(0.5); 
-  }
+  0% { bottom: -10%; opacity: 0; transform: translateX(0) scale(0.5); }
+  20% { opacity: 0.8; }
+  50% { transform: translateX(15px) scale(1); }
+  80% { opacity: 0.5; }
+  100% { bottom: 110%; opacity: 0; transform: translateX(-15px) scale(0.5); }
 }
 
 /* =========================================
    SECTION 4.5: CUỘN NGANG (HORIZONTAL SCROLL)
    ========================================= */
-
 .tour-section {
-  padding: 0; /* Loại bỏ khoảng trắng thừa */
+  padding: 0; 
   position: relative;
   background-color: var(--color-text-dark);
   overflow: hidden;
@@ -707,25 +663,22 @@
   height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory; /* Bắt buộc bám dính theo chiều ngang */
+  scroll-snap-type: x mandatory; 
   scroll-behavior: smooth;
-  
-  /* Ẩn thanh cuộn trên các trình duyệt */
-  -ms-overflow-style: none;  /* IE và Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
 .horizontal-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
-/* --- Thiết kế từng trang cuộn ngang (Slide) --- */
 .h-slide {
   flex: 0 0 100vw;
   height: 100vh;
-  scroll-snap-align: start; /* Điểm bám dính khi cuộn */
+  scroll-snap-align: start; 
   display: flex;
-  flex-direction: column-reverse; /* Đảo ngược ảnh lên trên, chữ xuống dưới cho Mobile */
+  flex-direction: column-reverse; 
   position: relative;
 }
 
@@ -754,25 +707,20 @@
   position: relative;
 }
 
-/* Đổ bóng nhẹ chuyển giao giữa ảnh và chữ */
 .h-slide-image::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
+  bottom: 0; left: 0;
+  width: 100%; height: 30%;
   background: linear-gradient(to top, var(--color-text-dark), transparent);
 }
 
-/* Hình ảnh minh họa (Hãy thay bằng ảnh thực tế trong folder public/images của bạn) */
 .bg-gate { background-image: url('/images/dai-hong-mon.jpg'); }
 .bg-bidinh{background-image: url('images/bi-dinh.jpg');}
 .bg-temple { background-image: url('/images/dien-sung-an.jpg'); }
 .bg-minhlau { background-image: url('/images/minh-lau.jpg'); }
 .bg-lake { background-image: url('/images/tan-nguyet.jpg'); }
 
-/* --- Dòng chữ nhắc nhở trượt ngang --- */
 .swipe-hint {
   position: absolute;
   bottom: 30px;
@@ -796,33 +744,27 @@
   50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
 }
 
-/* --- Responsive cho PC / Tablet --- */
 @media (min-width: 768px) {
   .h-slide {
-    flex-direction: row; /* Xếp thành 2 cột trái phải */
+    flex-direction: row; 
     overflow: hidden;
   }
-  
   .h-slide-content {
     flex: 0.4;
     padding: 0 80px;
   }
-  
   .h-slide-image {
     flex: 0.6;
   }
-
   .h-slide-image::after {
-    /* Đổi bóng chuyển giao sang chiều ngang */
-    width: 30%;
-    height: 100%;
+    width: 30%; height: 100%;
     background: linear-gradient(to right, var(--color-text-dark), transparent);
   }
 }
+
 /* =========================================
    SECTION 6: LỜI KẾT & THÔNG TIN THAM QUAN
    ========================================= */
-
 .section-footer-container {
   display: flex;
   flex-direction: column;
@@ -866,7 +808,6 @@
   margin-bottom: 35px;
 }
 
-/* Nút quay lại đầu trang dạng cổ điển */
 .btn-primary {
   background-color: var(--color-crimson);
   color: var(--color-paper);
@@ -895,18 +836,17 @@
   color: #777;
 }
 
-/* Responsive grid cho máy tính */
 @media (min-width: 768px) {
   .visit-cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* --- SECTION: KÝ SỰ KIẾN THIẾT --- */
 .construction-section {
   background-color: var(--color-paper);
 }
 
-/* --- Thanh điều hướng Tiến trình (Stepper Nav) --- */
 .stepper-nav {
   display: flex;
   align-items: center;
@@ -914,7 +854,7 @@
   position: relative;
   margin: 30px 0 25px;
   padding: 10px 0;
-  overflow-x: auto; /* Cho phép vuốt ngang trên điện thoại */
+  overflow-x: auto; 
   scrollbar-width: none;
 }
 
@@ -936,7 +876,7 @@
 }
 
 .step-node::before {
-content: '';
+  content: '';
   position: absolute;
   bottom: 7px;
   left: 50%;
@@ -971,7 +911,6 @@ content: '';
   z-index: 2;
 }
 
-/* Trạng thái Node đang active */
 .step-node.active .node-year {
   color: var(--color-crimson);
   font-size: 1rem;
@@ -984,7 +923,6 @@ content: '';
   box-shadow: 0 0 10px rgba(122, 31, 31, 0.5), 0 0 0 4px var(--color-paper);
 }
 
-/* --- Thẻ hiển thị thông tin cột mốc --- */
 .milestone-display-card {
   background-color: #ffffff;
   border: 2px solid var(--color-gold);
@@ -1032,7 +970,6 @@ content: '';
   margin: 0;
 }
 
-/* --- Bộ nút chuyển mốc nhanh --- */
 .milestone-controls {
   display: flex;
   align-items: center;
@@ -1068,19 +1005,21 @@ content: '';
   color: #888;
 }
 
+/* =========================================
+   TỐI ƯU HÓA CHO ĐIỆN THOẠI DI ĐỘNG
+   ========================================= */
 @media (max-width: 768px) {
-  /* 1. KHẮC PHỤC LỖI CHIỀU CAO TOÀN TRANG (Sử dụng 100dvh chuẩn di động) */
+  
   .snap-container {
     height: 100dvh;
   }
 
   .snap-section {
     height: 100dvh;
-    padding: 12px 16px; /* Thu hẹp padding viền */
+    padding: 12px 16px; 
     box-sizing: border-box;
   }
 
-  /* Thu nhỏ các tiêu đề chung */
   .section-title {
     font-size: 1.5rem !important;
     margin-bottom: 12px !important;
@@ -1092,45 +1031,42 @@ content: '';
   }
 
   /* --- TRANG 1: HERO --- */
-  .hero-title {
-    font-size: 1.8rem;
-  }
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-  .hero-content {
-    font-size: 0.85rem;
-    margin-top: 8px;
-  }
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 0.9rem; }
+  .hero-content { font-size: 0.85rem; margin-top: 8px; }
 
-  /* --- TRANG 2: VỊ VUA KIỆT XUẤT (FIX LỖI CHÈN ẢNH) --- */
+  /* --- TRANG 2: VỊ VUA KIỆT XUẤT (SỬA LỖI TRÀN CHỮ BẰNG BỐ CỤC NGANG) --- */
   .section-2-container .split-layout {
     height: 100%;
-    gap: 10px;
+    gap: 15px;
     padding: 10px 0;
+    flex-direction: row; /* Đổi thành hàng ngang để giải phóng chiều dọc */
+    align-items: flex-start;
   }
 
   .portrait-column {
-    flex: 0 0 auto;
-    max-height: 130px; /* Ép gọn chiều cao khung ảnh */
-    margin-bottom: 5px;
+    flex: 0 0 100px; /* Ảnh cố định rộng 100px nằm bên trái */
+    max-height: none;
+    margin-bottom: 0;
+    margin-top: 15px;
+    display: flex;
   }
 
   .portrait-wrapper {
-    max-width: 95px; /* Thu nhỏ ảnh để không đè lên chữ */
-    height: 100%;
+    max-width: 100%; 
+    height: auto;
     aspect-ratio: 3 / 4;
     border-width: 2px;
   }
 
   .portrait-caption {
     font-size: 0.65rem;
-    padding: 2px 4px;
+    padding: 4px;
   }
 
   .timeline-column {
-    flex: 1;
-    max-height: calc(100dvh - 200px); /* Tự động tính chiều cao còn lại cho dòng thời gian */
+    flex: 1; /* Dòng thời gian chiếm toàn bộ phần diện tích còn lại bên phải */
+    max-height: calc(100dvh - 80px); /* Đảm bảo đủ không gian cuộn dọc */
     overflow-y: auto;
     padding-right: 4px;
   }
@@ -1141,189 +1077,92 @@ content: '';
   }
 
   .timeline-dot {
-    left: -24px;
-    top: 14px;
-    width: 10px;
-    height: 10px;
+    left: -24px; top: 14px; width: 10px; height: 10px;
   }
 
-  .timeline-item {
-    margin-bottom: 10px;
-  }
+  .timeline-item { margin-bottom: 10px; }
 
-  .timeline-card {
-    padding: 10px 12px;
-  }
+  .timeline-card { padding: 10px 12px; }
 
   .timeline-card .card-title {
-    font-size: 0.95rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem; margin-bottom: 4px;
   }
 
   .timeline-card .info-text {
-    font-size: 0.82rem;
-    line-height: 1.4;
+    font-size: 0.82rem; line-height: 1.4;
   }
 
-  /* --- TRANG 3: TRIẾT LÝ & PHONG THỦY (2 THẺ LẬT) --- */
+  /* --- TRANG 3: TRIẾT LÝ & PHONG THỦY (SỬA LỖI MẤT ẢNH PARALLAX) --- */
+  .parallax-section {
+    background-attachment: scroll !important; /* Fix lỗi iOS cắt/phóng to background */
+    background-position: center top;
+  }
+
   .flip-cards-container {
-    gap: 10px;
+    gap: 12px;
     margin-top: 10px;
   }
 
   .flip-card {
     max-width: 100%;
-    height: 150px; /* Thu nhỏ thẻ lật để xếp vừa 2 thẻ trên 1 màn hình */
+    height: 200px; /* Tăng chiều cao để không nuốt chữ */
   }
 
   .flip-card-front, .flip-card-back {
-    padding: 10px 14px;
+    padding: 12px 14px;
   }
 
-  .card-icon {
-    font-size: 2rem;
-    margin-bottom: 2px;
+  .card-icon { font-size: 2rem; margin-bottom: 2px; }
+
+  .flip-card-front .card-title { font-size: 1rem; margin-top: 2px !important; }
+
+  .flip-card-back .info-text { font-size: 0.85rem; line-height: 1.4; }
+
+  /* --- TRANG 4.5: TOUR (CUỘN NGANG) --- */
+  .horizontal-scroll-container {
+    height: 100dvh;
+    width: 100vw;
   }
 
-  .flip-card-front .card-title {
-    font-size: 1rem;
-    margin-top: 2px !important;
+  .h-slide-image {
+    flex: 1;
+    max-height: 50dvh; 
   }
 
-  .flip-card-back .info-text {
-    font-size: 0.82rem;
-    line-height: 1.4;
-  }
-
-  /* --- TRANG KÝ SỰ KIẾN THIẾT --- */
-  .construction-section .info-text {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-  }
-
-  .stepper-nav {
-    margin: 8px 0 12px;
-  }
-
-  .step-node {
-    min-width: 65px;
-  }
-
-  .node-year {
-    font-size: 0.7rem;
-  }
-
-  .milestone-display-card {
-    padding: 14px 16px;
-    min-height: 140px;
-  }
-
-  .milestone-badge {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    margin-bottom: 6px;
-  }
-
-  .milestone-title {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-  }
-
-  .milestone-desc {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  /* --- TRANG TOUR (CUỘN NGANG) --- */
-.h-slide-content {
+  .h-slide-content {
     flex: 1;
     padding: 16px;
     max-height: 50dvh;
   }
 
-  .h-slide-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
+  .h-slide-title { font-size: 1.5rem; margin-bottom: 10px; }
 
-  .swipe-hint {
-    bottom: 15px;
-    padding: 6px 16px;
-    font-size: 0.8rem;
-  }
+  .swipe-hint { bottom: 15px; padding: 6px 16px; font-size: 0.8rem; }
 
   /* --- TRANG SƠ ĐỒ TỔNG THỂ --- */
-  .map-layout {
-    min-height: unset;
-    height: calc(100dvh - 110px);
-    gap: 8px;
-  }
+  .map-layout { min-height: unset; height: calc(100dvh - 110px); gap: 8px; }
+  .map-image-container { flex: 1; max-height: 38vh; padding: 4px; }
+  .map-notes-container { flex: 1; max-height: 34vh; padding: 6px; }
+  .notes-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+  .note-card { padding: 4px 6px; font-size: 0.72rem; }
 
-  .map-image-container {
-    flex: 1;
-    max-height: 38vh;
-    padding: 4px;
-  }
-
-  .map-notes-container {
-    flex: 1;
-    max-height: 34vh;
-    padding: 6px;
-  }
-
-  .notes-grid {
-    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột cho tiết kiệm không gian */
-    gap: 4px;
-  }
-
-  .note-card {
-    padding: 4px 6px;
-    font-size: 0.72rem;
-  }
+  /* --- TRANG KÝ SỰ KIẾN THIẾT --- */
+  .construction-section .info-text { font-size: 0.85rem; margin-bottom: 8px; }
+  .stepper-nav { margin: 8px 0 12px; }
+  .step-node { min-width: 65px; }
+  .node-year { font-size: 0.7rem; }
+  .milestone-display-card { padding: 14px 16px; min-height: 140px; }
+  .milestone-badge { font-size: 0.7rem; padding: 2px 8px; margin-bottom: 6px; }
+  .milestone-title { font-size: 1.1rem; margin-bottom: 4px; }
+  .milestone-desc { font-size: 0.85rem; line-height: 1.4; }
 
   /* --- TRANG LỜI KẾT & THAM QUAN --- */
-  .visit-cards-grid {
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-
-  .visit-card {
-    padding: 8px 10px;
-  }
-
-  .visit-icon {
-    font-size: 1.3rem;
-    margin-bottom: 2px;
-  }
-
-  .visit-card-title {
-    font-size: 0.9rem;
-    margin-bottom: 2px;
-  }
-
-  .visit-card .info-text {
-    font-size: 0.78rem;
-  }
-
-  .footer-actions {
-    margin-bottom: 12px;
-  }
-
-  .btn-primary {
-    padding: 8px 20px;
-    font-size: 0.85rem;
-  }
-
-  .site-footer {
-    padding-top: 10px;
-    font-size: 0.75rem;
-  }
+  .visit-cards-grid { gap: 8px; margin-bottom: 12px; }
+  .visit-card { padding: 8px 10px; }
+  .visit-icon { font-size: 1.3rem; margin-bottom: 2px; }
+  .visit-card-title { font-size: 0.9rem; margin-bottom: 2px; }
+  .visit-card .info-text { font-size: 0.78rem; }
+  .footer-actions { margin-bottom: 12px; }
+  .btn-primary { padding: 8px 20px; font-size: 0.85rem; }
+  .site-footer { padding-top: 10px; font-size: 0.75rem; }
 }
-.h-slide-image {
-    flex: 1;
-    max-height: 50dvh; /* Giới hạn ảnh tối đa 50% màn hình di động */
-  }
-.horizontal-scroll-container {
-    height: 100dvh;
-    width: 100vw;
-  }
